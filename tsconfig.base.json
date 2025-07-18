@@ -16,6 +16,11 @@
     "skipLibCheck": true,
     "strict": true,
     "target": "es2022",
-    "customConditions": ["development"]
+    "customConditions": ["development"],
+    "baseUrl": ".",
+    "paths": {
+      "@vite-reprod/utils": ["libs/utils/src"],
+      "@vite-reprod/utils/*": ["libs/utils/src/*"],
+    }
   }
 }

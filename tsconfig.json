@@ -8,6 +8,9 @@
     },
     {
       "path": "./plugins/nx-vite"
+    },
+    {
+      "path": "./libs/utils"
     }
   ]
 }
