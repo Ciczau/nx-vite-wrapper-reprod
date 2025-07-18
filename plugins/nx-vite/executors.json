@@ -1,0 +1,9 @@
+{
+  "executors": {
+    "build": {
+      "implementation": "./dist/executors/build",
+      "schema": "./dist/executors/schema.json",
+      "description": "build executor"
+    }
+  }
+}

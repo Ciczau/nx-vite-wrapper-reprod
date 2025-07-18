@@ -1,0 +1,56 @@
+{
+  "name": "@vite-reprod/nx-vite",
+  "version": "0.0.1",
+  "private": true,
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "development": "./src/index.ts",
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "nx": {
+    "targets": {
+      "build": {
+        "executor": "@nx/js:tsc",
+        "outputs": [
+          "{options.outputPath}"
+        ],
+        "options": {
+          "outputPath": "plugins/nx-vite/dist",
+          "main": "plugins/nx-vite/src/index.ts",
+          "tsConfig": "plugins/nx-vite/tsconfig.lib.json",
+          "rootDir": "plugins/nx-vite/src",
+          "generatePackageJson": false,
+          "assets": [
+            {
+              "input": "./plugins/nx-vite/src",
+              "glob": "**/!(*.ts)",
+              "output": "."
+            },
+            {
+              "input": "./plugins/nx-vite/src",
+              "glob": "**/*.d.ts",
+              "output": "."
+            }
+          ]
+        }
+      }
+    }
+  },
+  "dependencies": {
+    "@nx/devkit": "21.2.1",
+    "tslib": "^2.3.0"
+  },
+  "executors": "./executors.json",
+  "files": [
+    "dist",
+    "!**/*.tsbuildinfo",
+    "executors.json"
+  ]
+}

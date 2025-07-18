@@ -5,6 +5,9 @@
   "references": [
     {
       "path": "./apps/playground"
+    },
+    {
+      "path": "./plugins/nx-vite"
     }
   ]
 }
